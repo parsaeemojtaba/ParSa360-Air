@@ -1,4 +1,4 @@
-# ParSa360: A 360-degree imagery-multisensory capture system
+# ParSa 360+Air: A 360-degree imagery-multisensory capture system
 These programs.
 
 # Dependencies

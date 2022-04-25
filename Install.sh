@@ -12,14 +12,14 @@ echo "dtoverlay=i2c-gpio,bus=11,i2c_gpio_sda=4,i2c_gpio_scl=5" | sudo tee -a /bo
 echo "dtoverlay=i2c-gpio,bus=10,i2c_gpio_sda=0,i2c_gpio_scl=1" | sudo tee -a /boot/config.txt
 
 ## clone ParSa360 files
-echo "$(tput setaf 10)clone ParSa360 files"
-if ! (git clone https://github.com/parsaeemojtaba/ParSa360.git) then
-    echo "$(tput setaf 9)cannot clone the repository!"
-    echo "cannot clone the repository!" | sudo tee -a /home/pi/info.txt
-else
-    echo "$(tput setaf 11)done!"
-    echo "done!" | sudo tee -a /home/pi/info.txt
-fi
+# echo "$(tput setaf 10)clone ParSa360 files"
+# if ! (git clone https://github.com/parsaeemojtaba/ParSa360.git) then
+#     echo "$(tput setaf 9)cannot clone the repository!"
+#     echo "cannot clone the repository!" | sudo tee -a /home/pi/info.txt
+# else
+#     echo "$(tput setaf 11)done!"
+#     echo "done!" | sudo tee -a /home/pi/info.txt
+# fi
 
 ## install pandas
 echo "$(tput setaf 10)install pandas"

@@ -6,4 +6,4 @@ chmod 777 /home/pi/ParSa360/Install.sh
 chmod 777 /home/pi/ParSa360/setI2Cs.sh  
 ```
 
-# Dependencies
+## Dependencies

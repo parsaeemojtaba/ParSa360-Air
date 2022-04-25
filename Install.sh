@@ -22,7 +22,7 @@ echo "dtoverlay=i2c-gpio,bus=10,i2c_gpio_sda=0,i2c_gpio_scl=1" | sudo tee -a /bo
 # fi
 
 ## install pandas
-echo "$(tput setaf 16)install pandas"
+echo "$(tput setaf 6)install pandas"
 sudo apt-get install python3-pandas
 
 ## install Thermal Cam
@@ -31,7 +31,7 @@ pip3 install Seeed-grove.py
 pip3 install seeed-python-mlx9064x
 
 ## install CO2
-echo "$(tput setaf 16)install CO2"
+echo "$(tput setaf 6)install CO2"
 sudo pip3 install mh-z19
 
 ## install PM2.5

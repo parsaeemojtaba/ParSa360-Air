@@ -5,5 +5,3 @@ git clone https://github.com/parsaeemojtaba/ParSa360.git
 chmod 777 /home/pi/ParSa360/Install.sh  
 chmod 777 /home/pi/ParSa360/setI2Cs.sh  
 ```
-
-## Dependencies

@@ -3,7 +3,11 @@ Run the following command lines in a terminal to install all required libraries 
 ```
 git clone https://github.com/parsaeemojtaba/ParSa360.git  
 chmod 777 /home/pi/ParSa360/Install.sh  
-chmod 777 /home/pi/ParSa360/setI2Cs.sh  
+
 ```
-## Install.sh: Install Dependencies and Update Packages 
-This script automates the installation of dependencies and updates for a Raspberry Pi device. It installs Pandas, Thermal Cam, CO2, and PM2.5 libraries. It also updates system packages and moves a specific file. Use it to streamline the setup process for projects on a Raspberry Pi.
+## Raspberry Pi Dependency Installation and Update Script
+This script automates dependency installation and system updates on a Raspberry Pi device. It performs the following tasks:
+-Install Dependencies: Pandas, Thermal Cam, CO2, PM2.5.
+-System Updates: Update and upgrade packages.
+-Move Run File: Transfer ParSaDataLoggerSet.py to the main directory.
+Use this script to streamline Raspberry Pi setup for projects.

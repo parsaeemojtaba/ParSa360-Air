@@ -4,10 +4,10 @@
 
 To install all the required libraries and dependencies, run the following command lines in a terminal:
 
-```
-git clone https://github.com/parsaeemojtaba/ParSa360.git
-chmod 777 /home/pi/ParSa360/Install.sh
-./Install.sh
+   ```
+   git clone https://github.com/parsaeemojtaba/ParSa360.git
+   chmod 777 /home/pi/ParSa360/Install.sh
+   ./Install.sh
 
 ## Description of Raspberry Pi Dependency Installation and Update Script
 
@@ -23,15 +23,12 @@ To use this script, follow these steps:
 
    ```
    git clone https://github.com/parsaeemojtaba/ParSa360.git
-
 2. Set permissions for the installation script:
 
    ```
    chmod 777 /home/pi/ParSa360/Install.sh
- 
 3. Run the script:
    ```
    ./Install.sh
-
 This will automate the setup process and ensure that all necessary dependencies are installed on your Raspberry Pi device.
 Feel free to make any necessary adjustments to the above instructions to suit your specific needs.

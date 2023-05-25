@@ -8,7 +8,7 @@ To install all the required libraries and dependencies, run the following comman
    git clone https://github.com/parsaeemojtaba/ParSa360.git
    chmod 777 /home/pi/ParSa360/Install.sh
    ./Install.sh
-
+   ```
 ## Description of Raspberry Pi Dependency Installation and Update Script
 
 This script automates the installation of dependencies and performs system updates on a Raspberry Pi device. It includes the following tasks:

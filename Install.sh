@@ -29,3 +29,4 @@ sudo mv /home/pi/ParSa360/libs/ParSaDataLoggerSet.py /home/pi/
 
 ## set I2C ports
 chmod 777 /home/pi/ParSa360/libs/setI2Cs.sh  
+/home/pi/ParSa360/libs/setI2Cs.sh

@@ -13,9 +13,9 @@ To install all the required libraries and dependencies, run the following comman
 
 This script automates the installation of dependencies and performs system updates on the Raspberry Pi device used in ParSa360+Air. It includes the following tasks:
 
-- Install Dependencies: Pandas, Thermal Cam, CO2, PM2.5.
-- System Updates: Update and upgrade packages.
-- Move Run File: Transfer `ParSaDataLoggerSet.py` to the main directory.
+•	Install Dependencies: Pandas, Thermal Cam, CO2, PM2.5.
+•	Write I2C ports and update and upgrade OS packages.
+•	Move the file ‘ParSaDataLoggerSet.py’ to the home directory
 
 To use this script, follow these steps:
 

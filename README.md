@@ -5,7 +5,7 @@
 To install all the required libraries and dependencies, run the following command lines in a terminal:
 
    ```
-   git clone https://github.com/parsaeemojtaba/ParSa360.git
+   git clone https://github.com/parsaeemojtaba/ParSa360-Air.git
    chmod 777 /home/pi/ParSa360/Install.sh
    ./Install.sh
    ```

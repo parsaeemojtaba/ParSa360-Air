@@ -9,7 +9,7 @@ To install all the required libraries and dependencies, run the following comman
    chmod 777 /home/pi/ParSa360/Install.sh
    ./Install.sh
    ```
-## Description of Raspberry Pi Dependency Installation and Update Script
+## Description
 
 This script automates the installation of dependencies and performs system updates on a Raspberry Pi device. It includes the following tasks:
 

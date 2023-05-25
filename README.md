@@ -15,7 +15,7 @@ This script automates the installation of dependencies and performs system updat
 
 - Install Dependencies: Pandas, Thermal Cam, CO2, PM2.5.
 - Write I2C ports and update and upgrade OS packages.
-- Move the file ‘ParSaDataLoggerSet.py’ to the home directory
+- Move the file ‘ParSa360Air_LoggerRun.py’ to the home directory
 
 To use this script, follow these steps:
 

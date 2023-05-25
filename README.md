@@ -9,4 +9,5 @@ This script automates dependency installation and system updates on a Raspberry 
 - Install Dependencies: Pandas, Thermal Cam, CO2, PM2.5.
 - System Updates: Update and upgrade packages.
 - Move Run File: Transfer ParSaDataLoggerSet.py to the main directory.
+
 Use this script to streamline Raspberry Pi setup for projects.

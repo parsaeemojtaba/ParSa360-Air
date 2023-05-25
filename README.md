@@ -6,7 +6,7 @@ To install all the required libraries and dependencies, run the following comman
 
    ```
    git clone https://github.com/parsaeemojtaba/ParSa360-Air.git
-   chmod 777 /home/pi/ParSa360/Install.sh
+   chmod 777 /home/pi/ParSa360-Air/Install.sh
    ./Install.sh
    ```
 ## Description
@@ -22,11 +22,11 @@ To use this script, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/parsaeemojtaba/ParSa360.git
+   git clone https://github.com/parsaeemojtaba/ParSa360-Air.git
 2. Set permissions for the installation script:
 
    ```
-   chmod 777 /home/pi/ParSa360/Install.sh
+   chmod 777 /home/pi/ParSa360-Air/Install.sh
 3. Run the script:
    ```
    ./Install.sh

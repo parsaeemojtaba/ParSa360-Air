@@ -26,3 +26,6 @@ sudo apt-get upgrade
 ## move the run file to main dirctory
 echo "$(tput setaf 12)move the run file to main dirctory"
 sudo mv /home/pi/ParSa360/libs/ParSaDataLoggerSet.py /home/pi/
+
+## set I2C ports
+chmod 777 /home/pi/ParSa360/libs/setI2Cs.sh  

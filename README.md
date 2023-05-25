@@ -11,7 +11,7 @@ To install all the required libraries and dependencies, run the following comman
    ```
 ## Description
 
-This script automates the installation of dependencies and performs system updates on a Raspberry Pi device. It includes the following tasks:
+This script automates the installation of dependencies and performs system updates on the Raspberry Pi device used in ParSa360+Air. It includes the following tasks:
 
 - Install Dependencies: Pandas, Thermal Cam, CO2, PM2.5.
 - System Updates: Update and upgrade packages.

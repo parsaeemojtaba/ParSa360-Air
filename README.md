@@ -9,7 +9,8 @@ To install all the required libraries and dependencies, run the following comman
    chmod 777 /home/pi/ParSa360-Air/Install.sh
    ./Install.sh
    ```
-Reboot after the isntalltion is done.
+Reboot after the installation is done.
+
 To run the logger, you ccan run either of the fllowing files. 
 - without a GUI
    ```

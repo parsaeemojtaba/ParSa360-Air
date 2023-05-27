@@ -9,6 +9,17 @@ To install all the required libraries and dependencies, run the following comman
    chmod 777 /home/pi/ParSa360-Air/Install.sh
    ./Install.sh
    ```
+Reboot after the isntalltion is done.
+To run the logger, you ccan run either of the fllowing files. 
+- without a GUI
+   ```
+   python3 runlogger.py
+   ```
+- with a GUI
+   ```
+   python3 runlogger_gui.py
+   ```
+
 ## Description
 
 This script automates the installation of dependencies and performs system updates on the Raspberry Pi device used in ParSa360+Air. It includes the following tasks:

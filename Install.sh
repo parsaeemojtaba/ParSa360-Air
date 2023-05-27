@@ -1,8 +1,13 @@
 #!/bin/bash
 
 ## install pandas
-echo "$(tput setaf 6)install pandas"
+echo "$(tput setaf 12)install pandas"
 sudo apt-get install python3-pandas
+
+## install pyqt
+echo "$(tput setaf 6)install pyqt5"
+sudo apt-get install python3-pyqt5
+sudo apt-get install qt5-style-plugins
 
 ## install Thermal Cam
 echo "$(tput setaf 12)install Thermal Cam"

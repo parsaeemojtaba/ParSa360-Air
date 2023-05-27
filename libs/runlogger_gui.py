@@ -1,8 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QRadioButton, QPushButton, QLineEdit
 
-# Import threading and multiprocessing modules
-import threading
+# Import multiprocessing module
 import multiprocessing
 
 sys.path.insert(1, '/home/pi/ParSa360-Air/libs')
@@ -59,10 +58,10 @@ class MainWindow(QWidget):
 
         self.setLayout(layout)
 
-        self.is_logging = False  # Variable to track the logging state
+        self.logging_process = None  # Process to run the logging process
 
     def start_logging(self):
-        if self.is_logging:
+        if self.logging_process is not None and self.logging_process.is_alive():
             return  # Ignore the button click if already logging
 
         if self.raspberry_pi_1.isChecked():
@@ -78,37 +77,27 @@ class MainWindow(QWidget):
         # Disable the "Start Logging" button
         self.start_button.setEnabled(False)
 
-        # Set the logging state
-        self.is_logging = True
-
-        # Start logging in a separate thread
-        threading.Thread(target=self.run_logging, args=(set_raspberry_pi, measurement_duration, capture_duration,
-                                                        sensor_sleep_time, hqcamera_sleep_time)).start()
+        # Create and start a new process for the logging process
+        self.logging_process = multiprocessing.Process(
+            target=self.run_logging,
+            args=(set_raspberry_pi, measurement_duration, capture_duration,
+                  sensor_sleep_time, hqcamera_sleep_time)
+        )
+        self.logging_process.start()
 
     def run_logging(self, set_raspberry_pi, measurement_duration, capture_duration, sensor_sleep_time, hqcamera_sleep_time):
-        # Call the logger's main method
-        self.logger.main(set_raspberry_pi, measurement_duration, capture_duration,
-                         sensor_sleep_time, hqcamera_sleep_time)
+        # Call the logger's main method in a loop until the logging process is terminated
+        while True:
+            self.logger.main(set_raspberry_pi, measurement_duration, capture_duration,
+                             sensor_sleep_time, hqcamera_sleep_time)
+
+    def cancel_logging(self):
+        if self.logging_process is not None and self.logging_process.is_alive():
+            self.logging_process.terminate()  # Terminate the logging process
+            self.logging_process.join()  # Wait for the logging process to finish
 
         # Re-enable the "Start Logging" button
         self.start_button.setEnabled(True)
-
-        # Reset the logging state
-        self.is_logging = False
-
-    def cancel_logging(self):
-        # Terminate all threads and processes
-        threading.active_count()
-        for thread in threading.enumerate():
-            if thread is not threading.main_thread():
-                thread.join()
-
-        multiprocessing.active_children()
-        for process in multiprocessing.active_children():
-            process.terminate()
-
-        # Reset the logging state
-        self.is_logging = False
 
 
 if __name__ == '__main__':

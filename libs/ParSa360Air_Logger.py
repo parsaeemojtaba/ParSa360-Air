@@ -17,6 +17,9 @@ sys.path.insert(1, LIB_PATH)
 import ParSaDataLoggerGeneralFunctions as generalFunctions
 from RaspiCamera import RaspiCamera
 from ParSaDataLoggerSensoryRun import dataLog
+from HDRI_Generator import HDRGenerator
+### define the path to exif tool
+exifToolPath = '/usr/bin/exiftool'
 
 
 class ParSa360Air_Logger:
@@ -29,7 +32,13 @@ class ParSa360Air_Logger:
             self.shutter_speed_array = np.array([3200, 4800, 6400, 10000, 20000, 40000, 80000, 120000, 160000])
         else:
             self.shutter_speed_array = np.array(shutter_speed_array)
-
+        self.tonemap_param = {
+                "gammavalue" : 2.2,
+                "Rein_gamma" : 1,
+                "Rein_intensity" : 1,
+                "Rein_light_adapt" : 0,
+                "Rein_color_adapt" : 0,
+                }
     @staticmethod
     def get_input(prompt):
         while True:
@@ -62,15 +71,19 @@ class ParSa360Air_Logger:
         return time_string
 
     def imagery_captures(self, hqcamera_sleep_time, measurement_end_time, set_raspberry_pi):
-        capture_main_dir_name = 'Captures_Camera_1' if set_raspberry_pi == 1 else 'Captures_Camera_2'
+        capture_main_dir_name = 'Captures_Camera_1' if set_raspberry_pi == 1 else ('Captures_Camera_2' if set_raspberry_pi == 2 else 'Error: Invalid value')
         try:
             print('Start picturing')
             camera_capture_count = 0
             while time.time() < measurement_end_time:
                 try:
                     # Perform image capture
+                    ldri_ext = '.jpg'
                     camRaspi = RaspiCamera(make_timelapse_capture_dir=True, capture_store_dir=self.capture_store_dir, capture_main_dir_name=capture_main_dir_name)
-                    capture_pictures = camRaspi.capture_multiple_pictures(3125, 2500, 'Img_', '.jpg', 100, self.shutter_speed_array, 'off', 2.88671875, 1.8359375)
+                    capture_pictures = camRaspi.capture_multiple_pictures(3125, 2500, 'Img', ldri_ext, 100, self.shutter_speed_array, 'off', 2.88671875, 1.8359375)
+                    capture_dir_folder_path=camRaspi.new_capture_folder_path
+                    HDRIGen=HDRGenerator(capture_dir_folder_path, ldri_ext, exifToolPath, capture_dir_folder_path)
+                    HDRIGen.generateHDRIandTonemap( **self.tonemap_param)
                     camera_capture_count += 1
                 except Exception as e:
                     print('Capturing error:', str(e))
